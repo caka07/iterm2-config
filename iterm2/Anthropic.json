@@ -5,7 +5,7 @@
       "Guid": "anthropic-claude-theme-001",
       "Dynamic Profile Parent Name": "Default",
       "Normal Font": "BlexMonoNFM 14",
-      "Use Non-ASCII Font": true,
+      "Use Non-ASCII Font": false,
       "Non Ascii Font": "LXGWWenKaiMono-Regular 14",
       "Use Bold Font": true,
       "Use Italic Font": true,
