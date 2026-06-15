@@ -79,3 +79,11 @@ setopt INTERACTIVE_COMMENTS   # 交互式下允许 # 注释
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# zsh-autosuggestions —— 根据历史灰色提示补全，按 → 接受
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#A8A29A'   # 暖灰，贴 Anthropic
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
+# zsh-syntax-highlighting —— 命令语法高亮（必须放在 .zshrc 最末尾）
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
