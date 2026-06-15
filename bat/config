@@ -1,0 +1,10 @@
+# bat 配置：温暖的浅色主题，配 Anthropic 终端
+--theme="gruvbox-light"
+# 显示行号 + Git 改动标记 + 文件头
+--style="numbers,changes,header"
+# 不进分页器（当 cat 用），需要翻页时直接用 `bat 文件` 也可，或去掉此行
+--paging=never
+# tab 宽度
+--tabs=4
+# 斜体支持
+--italic-text=always

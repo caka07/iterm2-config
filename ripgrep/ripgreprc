@@ -1,0 +1,23 @@
+# ripgrep 配置（通过 RIPGREP_CONFIG_PATH 生效）
+# 智能大小写：全小写则忽略大小写，含大写则区分
+--smart-case
+
+# 搜索隐藏文件，但排除 .git
+--hidden
+--glob=!.git/*
+--glob=!node_modules/*
+--glob=!.venv/*
+--glob=!*.lock
+
+# 单行过长时截断，避免刷屏
+--max-columns=200
+--max-columns-preview
+
+# 跟随符号链接
+--follow
+
+# 高亮配色（暖色调）
+--colors=line:fg:yellow
+--colors=path:fg:green
+--colors=match:fg:red
+--colors=match:style:bold

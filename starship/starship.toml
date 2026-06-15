@@ -1,0 +1,87 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Anthropic 风格：暖色、留白、双行。第一行展示上下文，第二行只留输入符。
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$python\
+$conda\
+$nodejs\
+$rust\
+$golang\
+$cmd_duration\
+$line_break\
+$character"""
+
+# 陶土橙输入符 ❯（成功）/ 砖红（出错）
+[character]
+success_symbol = "[❯](bold #D97757)"
+error_symbol = "[❯](bold #A8392C)"
+vimcmd_symbol = "[❮](bold #5F7F4B)"
+
+[directory]
+style = "bold #C2410C"
+truncation_length = 3
+truncate_to_repo = true
+read_only = "  "
+read_only_style = "#A8392C"
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[git_branch]
+symbol = " "
+style = "#8A857A"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "#A87E25"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+conflicted = "✖"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "≡${count}"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[git_state]
+style = "#A8392C"
+format = '([$state( $progress_current/$progress_total)]($style) )'
+
+[cmd_duration]
+min_time = 500
+style = "#8A857A"
+format = "[ $duration]($style) "
+
+[python]
+symbol = " "
+style = "#3D6FAE"
+format = '[$symbol($version )(\($virtualenv\) )]($style)'
+
+[conda]
+symbol = " "
+style = "#5F7F4B"
+format = '[$symbol$environment]($style) '
+ignore_base = false
+
+[nodejs]
+symbol = " "
+style = "#5F7F4B"
+format = '[$symbol($version )]($style)'
+detect_extensions = ["js", "mjs", "cjs", "ts", "tsx", "jsx"]
+
+[rust]
+symbol = " "
+style = "#C24A2E"
+format = '[$symbol($version )]($style)'
+
+[golang]
+symbol = " "
+style = "#3E928D"
+format = '[$symbol($version )]($style)'
